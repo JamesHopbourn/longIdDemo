@@ -21,7 +21,7 @@ public class User {
     @Column(name = "admin_id", nullable = false, columnDefinition = "integer(20)")
     private Long adminId;
 
-    @PrivacyEncrypt(type = PrivacyTypeEnum.NAME)
+//    @PrivacyEncrypt(type = PrivacyTypeEnum.NAME)
     @Column(name = "user_name", nullable = false, columnDefinition = "text(20)")
     private String userName;
 
