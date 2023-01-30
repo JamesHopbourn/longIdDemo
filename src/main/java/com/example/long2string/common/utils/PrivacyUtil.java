@@ -40,12 +40,12 @@ public class PrivacyUtil {
 //        return desValue(idCard, 4, 2, "*");
 //    }
 
-//    /**
-//     * 【手机号码】前三位，后四位，其他隐藏。
-//     */
-//    public static String hidePhone(String phone) {
-//        return desValue(phone, 3, 4, "*");
-//    }
+    /**
+     * 【手机号码】前三位，后四位，其他隐藏。
+     */
+    public static String hidePhone(String phone) {
+        return desValue(phone, 3, 4, "*");
+    }
 
     /**
      * 对字符串进行脱敏操作

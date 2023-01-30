@@ -38,7 +38,12 @@ public class PrivacySerializer extends JsonSerializer<String> implements Context
                 case NAME:
                     jsonGenerator.writeString(PrivacyUtil.hideChineseName(origin));
                     break;
-                    
+                case PHONE:
+                    jsonGenerator.writeString(PrivacyUtil.hidePhone(origin));
+                    break;
+//                case EMAIL:
+//                    jsonGenerator.writeString(PrivacyUtil.hideEmail(origin));
+//                    break;
                 default:
                     throw new IllegalArgumentException("unknown privacy type enum " + privacyTypeEnum);
             }
