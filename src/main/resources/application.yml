@@ -13,12 +13,14 @@ spring:
       hibernate:
         dialect: org.sqlite.hibernate.dialect.SQLiteDialect
         format_sql: true
+        ejb:
+          naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
     show-sql: true
     hibernate:
       ddl-auto: create
-      naming:
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-
+#      naming:
+#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#
 
 mybatis-plus:
   global-config:
