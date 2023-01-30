@@ -2,6 +2,8 @@ package com.example.long2string.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.example.long2string.common.enums.PrivacyTypeEnum;
+import com.example.long2string.common.utils.PrivacyEncrypt;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
@@ -19,6 +21,7 @@ public class User {
     @Column(name = "admin_id", nullable = false, columnDefinition = "integer(20)")
     private Long adminId;
 
+    @PrivacyEncrypt(type = PrivacyTypeEnum.NAME)
     @Column(name = "user_name", nullable = false, columnDefinition = "text(20)")
     private String userName;
 
