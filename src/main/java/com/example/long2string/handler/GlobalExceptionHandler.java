@@ -16,7 +16,7 @@ public class GlobalExceptionHandler {
      * 传入参数缺失或者不匹配
      */
     @ExceptionHandler(SQLiteException.class)
-    public Result TypeMismatchException() {
+    public Result SQLiteException() {
         return Result.fail(Errors.SQL_Exception);
     }
 }
