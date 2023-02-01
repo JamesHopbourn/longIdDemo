@@ -1,10 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<meta charset="UTF-8">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-$END$
+<input type="text" id="name" placeholder="Name">
+<input type="text" id="phone" placeholder="Phone">
+<button onclick="submitData()">Submit</button>
+
+<h1>用户列表</h1>
+<ul id="user-list"></ul>
+
+<script>
+    function submitData() {
+        const name = $("#name").val();
+        const phone = $("#phone").val();
+
+        $.post({
+            contentType : 'application/json;charset=UTF-8',
+            url: "http://localhost:8080",
+            data: JSON.stringify({user_name: name, phone_number: phone}),
+            success: function (response) {
+                console.log(response);
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    }
+</script>
+<script>
+    $(document).ready(function() {
+        $.get({
+            url: "http://localhost:8080",
+            success: function(response) {
+                var users = response.data;
+                var list = document.getElementById("user-list");
+                for (var i = 0; i < users.length; i++) {
+                    var item = document.createElement("li");
+                    item.appendChild(document.createTextNode(users[i].user_name));
+                    item.appendChild(document.createTextNode(users[i].phone_number));
+                    list.appendChild(item);
+                }
+            }
+        });
+    });
+</script>
 </body>
 </html>

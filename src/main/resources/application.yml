@@ -18,6 +18,9 @@ spring:
 #      naming:
 #        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 #
+  web:
+    resources:
+      static-locations: classpath:/static/
 
 mybatis-plus:
   global-config:
