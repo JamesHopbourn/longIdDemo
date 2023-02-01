@@ -17,7 +17,6 @@ spring:
       ddl-auto: create
 #      naming:
 #        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-#
   web:
     resources:
       static-locations: classpath:/static/
