@@ -27,8 +27,8 @@ public class User {
     @Column(nullable = false, length = 10)
     private String userName;
 
-    @PrivacyEncrypt(type = PrivacyTypeEnum.PHONE)
     @Column(length = 13)
+    @PrivacyEncrypt(type = PrivacyTypeEnum.PHONE)
     private String phoneNumber;
 
     @Column(nullable = false)
