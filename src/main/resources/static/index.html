@@ -4,13 +4,6 @@
 <head>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<body>
-<input type="text" id="name" placeholder="Name">
-<input type="text" id="phone" placeholder="Phone">
-<button onclick="submitData()">Submit</button>
-
-<h1>用户列表</h1>
-<ul id="user-list"></ul>
 
 <script>
     function submitData() {
@@ -28,6 +21,7 @@
                 console.log(error);
             }
         });
+        location.reload();
     }
 </script>
 <script>
@@ -35,11 +29,11 @@
         $.get({
             url: "http://localhost:8080",
             success: function(response) {
-                var users = response.data;
-                var list = document.getElementById("user-list");
-                for (var i = 0; i < users.length; i++) {
-                    var item = document.createElement("li");
-                    item.appendChild(document.createTextNode(users[i].user_name));
+                let users = response.data;
+                let list = document.getElementById("user-list");
+                for (let i = 0; i < users.length; i++) {
+                    let item = document.createElement("li");
+                    item.appendChild(document.createTextNode(users[i].user_name + '\t'));
                     item.appendChild(document.createTextNode(users[i].phone_number));
                     list.appendChild(item);
                 }
@@ -47,5 +41,13 @@
         });
     });
 </script>
+
+<body>
+<input type="text" id="name" placeholder="Name">
+<input type="text" id="phone" placeholder="Phone">
+<button onclick="submitData()">Submit</button>
+
+<h1>用户列表</h1>
+<ul id="user-list"></ul>
 </body>
 </html>
