@@ -17,6 +17,6 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(SQLiteException.class)
     public Result SQLiteException() {
-        return Result.fail(Errors.SQL_Exception);
+        return Result.fail(Errors.INVALID_PARAMS);
     }
 }

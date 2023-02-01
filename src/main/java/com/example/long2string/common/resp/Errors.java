@@ -10,8 +10,7 @@ public enum Errors {
     ACCOUNT_NOT_EXIST(7, "用户名不存在"),
     ERROR_PATH(8, "请求路径出错"),
     METHOD_NOT_SUPPORTED(9, "请求方法错误"),
-    SQL_Exception(10, "SQL 语句错误"),
-    BAD_CREDENTIALS(11, "登陆密码错误");
+    SQL_Exception(10, "SQL 语句错误");
 
     private final int code;
     private final String message;
